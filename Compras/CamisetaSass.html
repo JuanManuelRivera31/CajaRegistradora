@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrontEnd Store</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html">
+            <img class="header__logo" src="ima/logo.png">
+        </a>
+    </header>
+    <nav class="navegacion">
+        <a class="navegacion__enlace navegacion__enlace--activo" href="index.html">Tienda</a>
+    </nav>
+
+    <main class="contenedor">
+        <h1 id="product-name">Camisa SASS</h1>
+        <h2 id="precio">250$</h2>
+        <div class="camisa">
+            <img class="camisa__imagen" src="ima/6.jpg" alt="Imagen del producto">
+
+            <div class="camisa__contenido">
+                <!-- <select class="formulario__campo">
+                        <option disabled selected>--Seleccionar Talla--</option>
+                        <option>Chica</option>
+                        <option>Mediana</option>
+                        <option>Grande</option>
+                    </select> -->
+                <input class="formulario__campo" id="product-quantity" type="number" placeholder="Cantidad" min="1">
+                <button class="formulario__submit" onclick="addToCart('Camisa SASS')">Agregar al carrito</button>
+                <button class="formulario__submit center" onclick="limpiarLastItem()">Eliminar Último</button>
+                <button class="formulario__submit center" onclick="limpiar()">Limpiar Carrito</button>
+                <button class="formulario__submit center" onclick="calculateTotal()"> Realizar Comprar</button>
+                <h2>Listado de compras</h2>
+                <ul id="cart">
+                    <li>Elementos</li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p class="footer__texto">Front End store - Todos los derechos reservados 2022.</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

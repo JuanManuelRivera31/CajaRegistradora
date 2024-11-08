@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrontEnd Store</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html">
+            <img class="header__logo" src="ima/logo.png">
+        </a>
+    </header>
+    <nav class="navegacion">
+        <a class="navegacion__enlace navegacion__enlace--activo" href="index.html">Tienda</a>
+    </nav>
+
+    <main class="contenedor">
+        <h1>Nuestros productos</h1>
+        <div class="grid">
+            <div class="producto"> <!-- Bloque !-->
+                <a href="camisaHtml.html" onclick="addToCart('Camiseta HTML');">
+                    <img id="html" class="producto__imagen" src="ima/7.jpg" alt="imagen camisa">
+                    <div class="producto__info">
+                        <p class="producto__nombre">HTML</p>
+                        <p class="producto__precio">$250</p>
+                    </div>
+                </a>
+            </div> <!-- Cierre de Bloque !-->
+            <div class="producto"> <!-- Bloque !-->
+                <a href="camisetaJS.html">
+                    <img class="producto__imagen" src="ima/12.jpg" alt="imagen camisa" onclick="goToProductPage('Camiseta JAVA SCRIPT')">
+                    <div class="producto__info">
+                        <p class="producto__nombre">JAVA SCRIPT</p>
+                        <p class="producto__precio">$250</p>
+                    </div>
+                </a>
+            </div> <!-- Cierre de Bloque !-->
+            <div class="producto"> <!-- Bloque !-->
+                <a href="camisetaReact.html">
+                    <img class="producto__imagen" src="ima/3.jpg" alt="imagen camisa" onclick="goToProductPage('Camiseta REACT')">
+                    <div class="producto__info">
+                        <p class="producto__nombre">ReactJS</p>
+                        <p class="producto__precio">$250</p>
+                    </div>
+                </a>
+            </div> <!-- Cierre de Bloque !-->
+            <div class="producto" onclick="goToProductPage('Camiseta NODE JS')"> <!-- Bloque !-->
+                <a href="camisetaNode.html">
+                    <img class="producto__imagen" src="ima/5.jpg" alt="imagen camisa">
+                    <div class="producto__info">
+                        <p class="producto__nombre">NodeJS</p>
+                        <p class="producto__precio">$250</p>
+                    </div>
+                </a>
+            </div> <!-- Cierre de Bloque !-->
+            <div class="producto"> <!-- Bloque !-->
+                <a href="camisetaSass.html">
+                    <img class="producto__imagen" src="ima/6.jpg" alt="imagen camisa" onclick="goToProductPage('Camiseta SASS')">
+                    <div class="producto__info">
+                        <p class="producto__nombre">SASS</p>
+                        <p class="producto__precio">$250</p>
+                    </div>
+                </a>
+            </div> <!-- Cierre de Bloque !-->
+            <div class="producto"> <!-- Bloque !-->
+                <a href="camisetaAngular.html">
+                    <img class="producto__imagen" src="ima/2.jpg" alt="imagen camisa" onclick="goToProductPage('Camiseta ANGULAR')"> 
+                    <div class="producto__info">
+                        <p class="producto__nombre">ANGULAR</p>
+                        <p class="producto__precio">$250</p>
+                    </div>
+                </a>
+            </div> <!-- Cierre de Bloque !-->
+        </div>
+        <div>
+
+        <h2>Listado de compras</h2>
+        <ul id="cart">
+            <li>Elementos</li>
+        </ul>
+        
+    </main>
+
+    <footer class="footer">
+        <p class="footer__texto">Front End store - Todos los derechos reservados 2022.</p>
+    </footer>
+    
+    <script src="js/app.js"></script>
+</body>
+
+</html>

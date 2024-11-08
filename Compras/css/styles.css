@@ -1,0 +1,249 @@
+:root {
+    --primario: #9C2780;
+    --primario-oscuro: #89119D;
+    --secundario: #FFCE00;
+    --secundario-oscuro: rgb(233, 287, 2);
+    --blanco: #FFF;
+    --negro: #000;
+    --fuente-principal: "Staatliches", cursive;
+}
+
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/* Globales */
+body{
+    background-color: var(--primario);
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+p{
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--blanco);
+}
+a{
+    text-decoration: none;
+}
+img{
+    width: 100%;
+}
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto; /* Para centrar */
+}
+h1,h2,h3, li{
+    text-align: center;
+    color: var(--secundario);
+    font-family: var(--fuente-principal);
+}
+h1{
+    font-size: 4rem;
+}
+h2{
+    font-size: 3.2rem;
+}
+h3{
+    font-size: 2.4rem;
+}
+li{
+    color: #FFF;
+}
+
+/* Footer */
+.header{
+    display: flex;
+    justify-content: center;
+}
+.header__logo{
+    margin: 3rem 0; /* Para añadir espacio arriba */
+}
+
+/* Footer */
+.footer{
+    background-color: var(--primario-oscuro);
+    padding: 1rem 0; /* 1 rem arriba y abajo, 0 izq y der */
+    margin-top: 2rem;
+}
+.footer__texto{
+    font-family: var(--fuente-principal);
+    text-align: center;
+    font-size: 2.2rem;
+}
+
+/* Navegacion */
+.navegacion{ 
+    background-color: var(--primario-oscuro);
+    padding: 1rem 0;
+    display: flex;  /* FlexBox para elementos dentro de otro contenedor */
+    justify-content: center;
+    gap: 3rem;  /* Separar elementos */
+}
+.navegacion__enlace{
+    font-family: var(--fuente-principal);
+    color: var(--blanco);
+    font-size: 3rem;
+}
+ /* Cambia color cuando el cursor esta encima */
+ .navegacion__enlace--activo, .navegacion__enlace:hover{
+    color: var(--secundario);
+}
+/* Grid */
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    row-gap: 2rem;
+}
+@media (min-width: 768px){
+    .grid{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Producto */
+.producto{
+    background-color: var(--primario-oscuro);
+    padding: 1rem;
+}
+
+.producto__nombre{
+    font-size: 4rem;
+}
+.producto__precio{
+    font-size: 2.8rem;
+    color: var(--secundario);
+}
+.producto__nombre, .producto__precio{
+    font-family: var(--fuente-principal);
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 2.2rem; /* Interlineado */
+}
+/* Graficos */
+.grafico{
+    min-height: 30rem;
+    background-repeat: no-repeat;
+    background-size: cover;  /* Para que la imagen cubra todo */
+    grid-column: 1 / 3;
+}
+/* Para cuando la pantalla sea grande y pueda tener 3 espacios */
+@media (min-width: 768px){
+    .grafico--node{
+        grid-row: 5 / 6;
+        grid-column: 2 / 4;
+    }
+}
+
+/* Nosotros */
+.nosotros {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    /* Dos filas en un tamaño pequeño */
+}
+@media (min-width: 768px){
+    .nosotros {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+.nosotros__imagen{
+    grid-row: 1 / 2;
+    /* Imagen de primero */
+}
+@media (min-width: 768px){
+    .nosotros__imagen{
+        grid-column: 2 / 3;
+        /* Imagen a la derecha */
+    }
+}
+
+  /* Imagen a la derecha */
+  .bloques{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem; /* Separado en todas las direcciones */
+  }
+  @media (min-width: 768px){
+    .bloques{
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem; /* Separado en todas las direcciones */
+      }
+  }
+  .bloque{
+    text-align: center;
+  }
+  .bloque__titulo{
+    margin: 0;
+  }
+@media (min-width: 768px){
+    .camisa{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 3rem;
+    }
+}
+.formulario{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+.formulario__campo{
+    border-color: var(--primario-oscuro);
+    border-width: 1rem;
+    border-style: solid;
+    /* border: 1rem solid var(--primario-oscuro); Aplica los tres valores */
+    background-color: transparent; /* Fondo del form */
+    color: var(--blanco);
+    font-size: 2.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
+}
+.formulario__submit{
+    background-color: var(--secundario);
+    border: none;
+    font-size: 2rem;
+    font-family: var(--fuente-principal);
+    padding: 2rem; /* Agrandar */
+    transition: background-color .3s ease; /* Difumina el color del boton cuando se esta sobre el */
+    transition: font-size .3s ease; /* Agranda el tamaño y fuente del boton cuando se esta sobre el */
+    grid-column: 1 / 3;
+}
+.formulario__submit:hover{ /* Estilos al presionar o estar */
+    font-size: 2.4rem;
+    cursor: pointer; /* Mano sobre botón */
+    background-color: var(--secundario-oscuro);
+}
+
+.compras{
+    background-color: #89119D;
+}
+
+#cart {
+    list-style-type: none;
+    padding: 0;
+}
+
+#cart li {
+    padding: 10px;
+    background-color: #89119D;
+    /* border: 1px solid #ddd; */
+    margin-bottom: 5px;
+    font-size: 2.5rem;
+}
+
+.center{
+    margin: 0.7rem;
+    width: 90%;
+    border-radius: 4%;
+}
